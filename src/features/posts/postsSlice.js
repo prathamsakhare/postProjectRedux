@@ -21,7 +21,8 @@ const postsSlice = createSlice({
       state.push(action.payload);
     },
     postRemove(state, action){
-        state.pop(action.payload)
+        
+        state.splice(action.payload, 1)
     }
   },
 });
