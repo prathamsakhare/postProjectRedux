@@ -21,18 +21,18 @@ const postsSlice = createSlice({
       reducer(state, action){
         state.push(action.payload)
       },
-      prepare(title, content) {
+      prepare(title, content, userId) {
         return {
           payload: {
             id: nanoid(),
             title, 
-            content
+            content,
+            userId
           }
         }
       }
     },
     postRemove(state, action){
-        console.log(action.payload)
         state.splice(action.payload, 1)
     }
   },
