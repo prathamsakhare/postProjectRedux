@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { postRemove, selectAllPosts } from "./postsSlice";
 import PostAuthor from "./PostAuthor";
+// import ReactionButtons from "./ReactionButtons";
 const PostsList = () => {
   const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
@@ -11,6 +12,7 @@ const PostsList = () => {
       <h4 className="postCredit">
         <PostAuthor userId={post.userId} />
       </h4>
+      {/* <ReactionButtons post={post} /> */}
       <button onClick={() => dispatch(postRemove(index))}>Delete Post</button>
     </article>
   ));
